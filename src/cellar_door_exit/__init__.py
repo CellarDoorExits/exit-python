@@ -12,8 +12,10 @@ Quick start:
 
 from .convenience import (
     Identity,
+    QuickCounterSignResult,
     QuickExitResult,
     generate_identity,
+    quick_counter_sign,
     quick_exit,
     quick_verify,
 )
@@ -85,10 +87,12 @@ __all__ = [
     "__version__",
     # Convenience
     "quick_exit",
+    "quick_counter_sign",
     "quick_verify",
     "generate_identity",
     "Identity",
     "QuickExitResult",
+    "QuickCounterSignResult",
     # Core operations
     "create_marker",
     "sign_marker",

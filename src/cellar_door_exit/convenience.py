@@ -16,6 +16,7 @@ from .crypto import (
 )
 from .marker import create_marker
 from .models import ExitMarker, ExitStatus, ExitType
+from .countersign import add_counter_signature
 from .proof import VerificationResult, sign_marker, verify_marker
 from .serialization import from_json
 
@@ -102,6 +103,54 @@ def quick_exit(
     )
 
     return QuickExitResult(marker=signed, identity=identity)
+
+
+@dataclass(frozen=True)
+class QuickCounterSignResult:
+    """Result of a quick_counter_sign() call."""
+
+    marker: ExitMarker
+    identity: Identity
+
+
+def quick_counter_sign(
+    marker: ExitMarker,
+    *,
+    private_key: bytes | None = None,
+    public_key: bytes | None = None,
+    role: str | None = None,
+) -> QuickCounterSignResult:
+    """Counter-sign an existing signed marker in one call.
+
+    Generates an ephemeral Ed25519 keypair (or uses the provided one),
+    adds a counter-signature, and returns the updated marker with the
+    counter-signer's identity.
+
+    Args:
+        marker: A signed EXIT marker to counter-sign.
+        private_key: Optional existing private key.
+        public_key: Optional existing public key (must pair with private_key).
+        role: Optional role label for the counter-signer.
+
+    Returns:
+        QuickCounterSignResult with counter-signed marker and identity.
+
+    Example:
+        >>> result = quick_exit("https://platform.example.com")
+        >>> countered = quick_counter_sign(result.marker)
+        >>> print(len(countered.marker.dispute.counterparty_acks))  # 1
+    """
+    if private_key is not None and public_key is not None:
+        did = did_from_public_key(public_key)
+        identity = Identity(did=did, public_key=public_key, private_key=private_key)
+    else:
+        identity = generate_identity()
+
+    counter_signed = add_counter_signature(
+        marker, identity.private_key, identity.public_key, role=role
+    )
+
+    return QuickCounterSignResult(marker=counter_signed, identity=identity)
 
 
 def quick_verify(marker_input: "str | ExitMarker") -> VerificationResult:

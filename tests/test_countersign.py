@@ -71,11 +71,11 @@ class TestAddCounterSignature:
         result = add_counter_signature(result, priv2, pub2)
         assert len(result.dispute.counterparty_acks) == 2
 
-    def test_id_changes_after_counter_signature(self, signed_marker, counter_keys):
+    def test_id_preserved_after_counter_signature(self, signed_marker, counter_keys):
         marker, _, _ = signed_marker
         c_priv, c_pub = counter_keys
         result = add_counter_signature(marker, c_priv, c_pub)
-        assert result.id != marker.id
+        assert result.id == marker.id
 
     def test_custom_verification_method(self, signed_marker, counter_keys):
         marker, _, _ = signed_marker

@@ -16,12 +16,14 @@ from .models import (
 )
 from .proof import DOMAIN_PREFIX, _marker_to_signing_dict, _signing_payload
 
+COUNTER_DOMAIN_PREFIX = "exit-counter-v1.2:"
+
 
 def _counter_signing_payload(marker: ExitMarker) -> bytes:
     """Compute the signing payload for counter-signatures.
 
-    Same as primary signing payload but also excludes counterpartyAcks
-    from the dispute module, since acks are appended after signing.
+    Uses a distinct domain prefix and includes the primary proofValue
+    to bind the counter-signature to a specific primary signature.
     """
     d = _marker_to_signing_dict(marker)
     # Strip counterpartyAcks from dispute if present
@@ -32,9 +34,14 @@ def _counter_signing_payload(marker: ExitMarker) -> bytes:
             d["dispute"] = dispute_copy
         else:
             del d["dispute"]
+    # Bind to the primary signature
+    primary_proof_value = ""
+    if marker.proof and marker.proof.proof_value:
+        primary_proof_value = marker.proof.proof_value
+    d["primaryProofValue"] = primary_proof_value
     import rfc8785
     canonical = rfc8785.dumps(d).decode("utf-8")
-    return (DOMAIN_PREFIX + canonical).encode("utf-8")
+    return (COUNTER_DOMAIN_PREFIX + canonical).encode("utf-8")
 
 
 def add_counter_signature(
@@ -87,10 +94,7 @@ def add_counter_signature(
         existing_acks.append(ack)
         new_dispute = dispute.model_copy(update={"counterparty_acks": existing_acks})
 
-        updated = marker.model_copy(update={"dispute": new_dispute})
-        new_dict = updated.model_dump(by_alias=True, exclude_none=True)
-        new_id = f"urn:exit:{compute_id(new_dict)}"
-        return updated.model_copy(update={"id": new_id})
+        return marker.model_copy(update={"dispute": new_dispute})
 
     except SigningError:
         raise
