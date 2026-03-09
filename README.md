@@ -113,19 +113,23 @@ This package produces markers that verify correctly with the TypeScript [`cellar
 - Base64 standard encoding (not URL-safe)
 - Timestamps: millisecond precision with `Z` suffix
 
-## 🗺️ Ecosystem
+## Ecosystem
 
-| Package | Description |
-|---------|-------------|
-| [cellar-door-exit](https://github.com/CellarDoorExits/exit-door) (TypeScript) | Core protocol -- departure markers (reference implementation) |
-| **[cellar-door-exit](https://github.com/CellarDoorExits/exit-python) (Python)** | **← you are here** |
-| [cellar-door-entry](https://github.com/CellarDoorExits/entry-door) | Arrival markers + admission |
-| [@cellar-door/mcp-server](https://github.com/CellarDoorExits/mcp-server) | MCP integration |
-| [@cellar-door/langchain](https://github.com/CellarDoorExits/langchain) | LangChain integration (TypeScript) |
-| [@cellar-door/vercel-ai-sdk](https://github.com/CellarDoorExits/vercel-ai-sdk) | Vercel AI SDK integration |
-| [@cellar-door/eas](https://github.com/CellarDoorExits/eas-adapter) | On-chain anchoring via EAS on Base L2 |
+| Package | Language | Description |
+|---------|----------|-------------|
+| [cellar-door-exit](https://github.com/CellarDoorExits/exit-door) | TypeScript | Core protocol (reference impl) |
+| **[cellar-door-exit](https://github.com/CellarDoorExits/exit-python)** | **Python** | **Core protocol ← you are here** |
+| [cellar-door-entry](https://github.com/CellarDoorExits/entry-door) | TypeScript | Arrival/entry markers |
+| [@cellar-door/langchain](https://github.com/CellarDoorExits/langchain) | TypeScript | LangChain integration |
+| [cellar-door-langchain](https://github.com/CellarDoorExits/cellar-door-langchain-python) | Python | LangChain integration |
+| [@cellar-door/vercel-ai-sdk](https://github.com/CellarDoorExits/vercel-ai-sdk) | TypeScript | Vercel AI SDK |
+| [@cellar-door/mcp-server](https://github.com/CellarDoorExits/mcp-server) | TypeScript | MCP server |
+| [@cellar-door/eliza](https://github.com/CellarDoorExits/eliza-exit) | TypeScript | ElizaOS plugin |
+| [@cellar-door/eas](https://github.com/CellarDoorExits/eas-adapter) | TypeScript | EAS attestation anchoring |
+| [@cellar-door/erc-8004](https://github.com/CellarDoorExits/erc-8004-adapter) | TypeScript | ERC-8004 identity/reputation |
+| [@cellar-door/sign-protocol](https://github.com/CellarDoorExits/sign-protocol-adapter) | TypeScript | Sign Protocol attestation |
 
-**[Paper](https://cellar-door.dev/paper/) · [Website](https://cellar-door.dev) · [NIST Submission](https://cellar-door.dev/nist/)**
+**[Paper](https://cellar-door.dev/paper/) · [Website](https://cellar-door.dev)**
 
 ## License
 
