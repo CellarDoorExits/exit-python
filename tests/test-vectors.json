@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "generator": "cellar-door-exit (TypeScript)",
+    "version": "0.2.2",
+    "specVersion": "1.2",
+    "generated": "2026-03-09T09:52:11.565Z",
+    "description": "Cross-language test vectors for EXIT Protocol implementations"
+  },
+  "canonicalization": [
+    {
+      "description": "Simple object — keys sorted",
+      "input": {
+        "b": "2",
+        "a": "1"
+      },
+      "expected": "{\"a\":\"1\",\"b\":\"2\"}"
+    },
+    {
+      "description": "Nested object — recursive sort",
+      "input": {
+        "z": {
+          "b": 2,
+          "a": 1
+        },
+        "a": "first"
+      },
+      "expected": "{\"a\":\"first\",\"z\":{\"a\":1,\"b\":2}}"
+    },
+    {
+      "description": "Unicode characters",
+      "input": {
+        "emoji": "🚪",
+        "name": "café"
+      },
+      "expected": "{\"emoji\":\"🚪\",\"name\":\"café\"}"
+    },
+    {
+      "description": "Number types",
+      "input": {
+        "int": 42,
+        "float": 3.14,
+        "neg": -1,
+        "zero": 0
+      },
+      "expected": "{\"float\":3.14,\"int\":42,\"neg\":-1,\"zero\":0}"
+    },
+    {
+      "description": "Null and boolean",
+      "input": {
+        "n": null,
+        "t": true,
+        "f": false
+      },
+      "expected": "{\"f\":false,\"n\":null,\"t\":true}"
+    },
+    {
+      "description": "Array values",
+      "input": {
+        "arr": [
+          3,
+          1,
+          2
+        ],
+        "key": "val"
+      },
+      "expected": "{\"arr\":[3,1,2],\"key\":\"val\"}"
+    },
+    {
+      "description": "Empty object and array",
+      "input": {
+        "obj": {},
+        "arr": []
+      },
+      "expected": "{\"arr\":[],\"obj\":{}}"
+    }
+  ],
+  "markers": {
+    "voluntary": {
+      "input": {
+        "subject": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+        "origin": "did:web:platform.example.com",
+        "exitType": "voluntary",
+        "timestamp": "2026-01-15T12:00:00.000Z"
+      },
+      "expected": {
+        "id": "urn:exit:bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+        "context": "https://cellar-door.dev/exit/v1",
+        "specVersion": "1.2",
+        "status": "good_standing",
+        "selfAttested": true,
+        "expires": "2028-01-15T12:00:00.000Z"
+      },
+      "contentHash": "bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+      "canonicalized": "{\"@context\":\"https://cellar-door.dev/exit/v1\",\"exitType\":\"voluntary\",\"expires\":\"2028-01-15T12:00:00.000Z\",\"origin\":\"did:web:platform.example.com\",\"selfAttested\":true,\"specVersion\":\"1.2\",\"status\":\"good_standing\",\"subject\":\"did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK\",\"timestamp\":\"2026-01-15T12:00:00.000Z\"}",
+      "fullMarker": {
+        "@context": "https://cellar-door.dev/exit/v1",
+        "specVersion": "1.2",
+        "id": "urn:exit:bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+        "subject": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+        "origin": "did:web:platform.example.com",
+        "timestamp": "2026-01-15T12:00:00.000Z",
+        "exitType": "voluntary",
+        "status": "good_standing",
+        "proof": {
+          "type": "Ed25519Signature2020",
+          "created": "2026-01-15T12:00:00.000Z",
+          "verificationMethod": "",
+          "proofValue": ""
+        },
+        "selfAttested": true,
+        "expires": "2028-01-15T12:00:00.000Z"
+      }
+    },
+    "forced": {
+      "input": {
+        "subject": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+        "origin": "did:web:platform.example.com",
+        "exitType": "forced",
+        "timestamp": "2026-01-15T12:00:00.000Z"
+      },
+      "expected": {
+        "id": "urn:exit:657871da15b64a24d02ab5a4f3ed3adb024378f5477e771726ddcd7a68af281b",
+        "status": "disputed",
+        "expires": "2027-01-15T12:00:00.000Z"
+      },
+      "contentHash": "657871da15b64a24d02ab5a4f3ed3adb024378f5477e771726ddcd7a68af281b",
+      "canonicalized": "{\"@context\":\"https://cellar-door.dev/exit/v1\",\"exitType\":\"forced\",\"expires\":\"2027-01-15T12:00:00.000Z\",\"origin\":\"did:web:platform.example.com\",\"selfAttested\":true,\"specVersion\":\"1.2\",\"status\":\"disputed\",\"subject\":\"did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK\",\"timestamp\":\"2026-01-15T12:00:00.000Z\"}"
+    },
+    "emergency": {
+      "input": {
+        "subject": "did:key:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK",
+        "origin": "did:web:platform.example.com",
+        "exitType": "emergency",
+        "timestamp": "2026-01-15T12:00:00.000Z",
+        "emergencyJustification": "Key material compromised via supply chain attack"
+      },
+      "expected": {
+        "id": "urn:exit:009cd7d744d19bb684adf029af8075f80e7a574d87248489553895479c53c9f7",
+        "status": "unverified",
+        "expires": "2027-01-15T12:00:00.000Z"
+      },
+      "contentHash": "009cd7d744d19bb684adf029af8075f80e7a574d87248489553895479c53c9f7"
+    }
+  },
+  "modules": {
+    "lineage": {
+      "description": "addModule recomputes content-addressed ID",
+      "baseMarkerId": "urn:exit:bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+      "withModuleId": "urn:exit:7df5e37dcf423ff8ff2ff58dd80b5f297f1919b6a857997483e6c06889267de0",
+      "idsAreDifferent": true,
+      "module": {
+        "previousMarker": "urn:exit:abc123",
+        "lineageHash": "sha256:deadbeef",
+        "sequenceNumber": 1
+      },
+      "contentHash": "7df5e37dcf423ff8ff2ff58dd80b5f297f1919b6a857997483e6c06889267de0"
+    }
+  },
+  "contentAddressing": {
+    "description": "Same inputs produce same ID (deterministic)",
+    "marker1Id": "urn:exit:bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+    "marker2Id": "urn:exit:bb0ab18948f627b1fbc8a723188d020541f3ca4ec7ae5396b96d6af51f2bbe72",
+    "areEqual": true
+  }
+}
