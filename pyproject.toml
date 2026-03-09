@@ -45,8 +45,8 @@ dependencies = [
 [project.urls]
 Homepage = "https://cellar-door.dev"
 Documentation = "https://cellar-door.dev/agent"
-Repository = "https://github.com/CellarDoorExits/cellar-door-exit-python"
-Issues = "https://github.com/CellarDoorExits/cellar-door-exit-python/issues"
+Repository = "https://github.com/CellarDoorExits/exit-python"
+Issues = "https://github.com/CellarDoorExits/exit-python/issues"
 
 [project.optional-dependencies]
 dev = [

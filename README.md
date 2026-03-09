@@ -118,7 +118,7 @@ This package produces markers that verify correctly with the TypeScript [`cellar
 | Package | Description |
 |---------|-------------|
 | [cellar-door-exit](https://github.com/CellarDoorExits/exit-door) (TypeScript) | Core protocol -- departure markers (reference implementation) |
-| **[cellar-door-exit](https://github.com/CellarDoorExits/cellar-door-exit-python) (Python)** | **← you are here** |
+| **[cellar-door-exit](https://github.com/CellarDoorExits/exit-python) (Python)** | **← you are here** |
 | [cellar-door-entry](https://github.com/CellarDoorExits/entry-door) | Arrival markers + admission |
 | [@cellar-door/mcp-server](https://github.com/CellarDoorExits/mcp-server) | MCP integration |
 | [@cellar-door/langchain](https://github.com/CellarDoorExits/langchain) | LangChain integration (TypeScript) |
