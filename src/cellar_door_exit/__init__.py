@@ -67,6 +67,12 @@ from .models import (
     TrustEnhancers,
     WitnessAttachment,
 )
+from .countersign import (
+    add_counter_signature,
+    add_witness,
+    derive_status_confirmation,
+    verify_counter_signature,
+)
 from .proof import VerificationResult, sign_marker, sign_marker_with_signer, verify_marker
 from .serialization import from_json, to_json
 from .signer import Ed25519Signer, P256Signer, Signer, create_signer
@@ -94,6 +100,11 @@ __all__ = [
     "canonicalize",
     "compute_id",
     "add_module",
+    # Counter-signatures
+    "add_counter_signature",
+    "add_witness",
+    "verify_counter_signature",
+    "derive_status_confirmation",
     # Crypto
     "generate_key_pair",
     "generate_p256_key_pair",
