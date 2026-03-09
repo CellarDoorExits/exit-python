@@ -1,7 +1,7 @@
 # cellar-door-exit 𓉸
 
 [![PyPI](https://img.shields.io/pypi/v/cellar-door-exit)](https://pypi.org/project/cellar-door-exit/)
-[![tests](https://img.shields.io/badge/tests-77_passing-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-85_passing-brightgreen)]()
 [![Python](https://img.shields.io/pypi/pyversions/cellar-door-exit)](https://pypi.org/project/cellar-door-exit/)
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
