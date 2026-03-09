@@ -7,7 +7,7 @@ name = "cellar-door-exit"
 version = "0.1.0"
 description = "EXIT Protocol SDK — create, sign, and verify ExitMarkers for AI agent departure records"
 readme = "README.md"
-license = "MIT"
+license = "Apache-2.0"
 requires-python = ">=3.10"
 authors = [
     { name = "Cellar Door", email = "hawthornhollows@gmail.com" },
