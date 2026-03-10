@@ -1,4 +1,4 @@
-"""cellar-door-exit — Marker validation."""
+"""exit-door — Marker validation."""
 
 from __future__ import annotations
 

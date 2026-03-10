@@ -4,10 +4,10 @@ import json
 
 import pytest
 
-from cellar_door_exit.convenience import quick_exit
-from cellar_door_exit.errors import ValidationError
-from cellar_door_exit.models import ExitMarker
-from cellar_door_exit.serialization import MAX_JSON_SIZE, from_json, to_json
+from exit_door.convenience import quick_exit
+from exit_door.errors import ValidationError
+from exit_door.models import ExitMarker
+from exit_door.serialization import MAX_JSON_SIZE, from_json, to_json
 
 
 class TestToJson:

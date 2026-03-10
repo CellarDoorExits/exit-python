@@ -2,7 +2,7 @@
 
 import pytest
 
-from cellar_door_exit.crypto import (
+from exit_door.crypto import (
     algorithm_from_did,
     did_from_p256_public_key,
     did_from_public_key,

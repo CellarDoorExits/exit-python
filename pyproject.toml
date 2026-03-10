@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cellar-door-exit"
+name = "exit-door"
 version = "0.1.0"
 description = "EXIT Protocol SDK — create, sign, and verify ExitMarkers for AI agent departure records"
 readme = "README.md"
@@ -45,8 +45,8 @@ dependencies = [
 [project.urls]
 Homepage = "https://cellar-door.dev"
 Documentation = "https://cellar-door.dev/agent"
-Repository = "https://github.com/CellarDoorExits/exit-python"
-Issues = "https://github.com/CellarDoorExits/exit-python/issues"
+Repository = "https://github.com/CellarDoorExits/exit-door-python"
+Issues = "https://github.com/CellarDoorExits/exit-door-python/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -57,7 +57,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cellar_door_exit"]
+packages = ["src/exit_door"]
 
 [tool.ruff]
 target-version = "py310"
@@ -78,7 +78,7 @@ warn_return_any = true
 warn_unused_configs = true
 
 [tool.coverage.run]
-source = ["cellar_door_exit"]
+source = ["exit_door"]
 branch = true
 
 [tool.coverage.report]

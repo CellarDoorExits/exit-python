@@ -1,8 +1,8 @@
 """Tests for convenience methods."""
 
-from cellar_door_exit.convenience import generate_identity, quick_exit, quick_verify
-from cellar_door_exit.models import ExitMarker, ExitType
-from cellar_door_exit.serialization import to_json
+from exit_door.convenience import generate_identity, quick_exit, quick_verify
+from exit_door.models import ExitMarker, ExitType
+from exit_door.serialization import to_json
 
 
 class TestGenerateIdentity:
@@ -55,7 +55,7 @@ class TestQuickVerify:
         assert verification.valid
 
     def test_verify_invalid_json(self) -> None:
-        from cellar_door_exit.errors import ValidationError
+        from exit_door.errors import ValidationError
         import pytest
         with pytest.raises(ValidationError):
             quick_verify("not json")

@@ -1,4 +1,4 @@
-"""cellar-door-exit — Algorithm-agnostic signer abstraction."""
+"""exit-door — Algorithm-agnostic signer abstraction."""
 
 from __future__ import annotations
 

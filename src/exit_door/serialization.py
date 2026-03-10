@@ -1,4 +1,4 @@
-"""cellar-door-exit — JSON serialization helpers."""
+"""exit-door — JSON serialization helpers."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-"""cellar-door-exit — Convenience methods.
+"""exit-door — Convenience methods.
 
 High-level helpers for common EXIT operations.
 """

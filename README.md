@@ -1,9 +1,9 @@
-# cellar-door-exit 𓉸
+# exit-door 𓉸
 
-[![PyPI](https://img.shields.io/pypi/v/cellar-door-exit)](https://pypi.org/project/cellar-door-exit/)
+[![PyPI](https://img.shields.io/pypi/v/exit-door)](https://pypi.org/project/exit-door/)
 [![tests](https://img.shields.io/badge/tests-85_passing-brightgreen)]()
-[![Python](https://img.shields.io/pypi/pyversions/cellar-door-exit)](https://pypi.org/project/cellar-door-exit/)
-[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![Python](https://img.shields.io/pypi/pyversions/exit-door)](https://pypi.org/project/exit-door/)
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)
 
 > **⚠️ Pre-release software -- no formal security audit has been conducted.** This project is published for transparency, review, and community feedback. It should not be used in production systems where security guarantees are required. If you find a vulnerability, please report it to hawthornhollows@gmail.com.
 
@@ -18,13 +18,13 @@ Think of it as a passport stamp for AI agents.
 ## Quick Start
 
 ```bash
-pip install cellar-door-exit
+pip install exit-door
 ```
 
 ### Create a signed departure marker in 3 lines:
 
 ```python
-from cellar_door_exit import quick_exit, quick_verify
+from exit_door import quick_exit, quick_verify
 
 result = quick_exit("https://platform.example.com")
 print(result.marker.id)  # urn:exit:a1b2c3...
@@ -40,7 +40,7 @@ assert verification.valid  # True
 ### From JSON:
 
 ```python
-from cellar_door_exit import to_json, quick_verify
+from exit_door import to_json, quick_verify
 
 json_str = to_json(result.marker)
 verification = quick_verify(json_str)  # Accepts both strings and objects
@@ -49,7 +49,7 @@ verification = quick_verify(json_str)  # Accepts both strings and objects
 ## Core API
 
 ```python
-from cellar_door_exit import (
+from exit_door import (
     generate_identity,
     create_marker,
     sign_marker,
@@ -99,13 +99,13 @@ result = quick_exit("https://example.com", algorithm="P-256")
 - **RFC 8785 JCS** canonicalization for deterministic signing
 - **did:key** encoding/decoding (Ed25519 + P-256)
 - **Content-addressed marker IDs** (SHA-256)
-- **Cross-language compatible** with the TypeScript `cellar-door-exit` package
+- **Cross-language compatible** with the TypeScript `exit-door` package
 - **Frozen models** (immutable after creation)
 - **Zero async dependencies** (sync-only, CPU-bound crypto)
 
 ## Cross-Language Compatibility
 
-This package produces markers that verify correctly with the TypeScript [`cellar-door-exit`](https://www.npmjs.com/package/cellar-door-exit) package and vice versa. Key interop decisions:
+This package produces markers that verify correctly with the TypeScript [`exit-door`](https://www.npmjs.com/package/exit-door) package and vice versa. Key interop decisions:
 
 - P-256 signatures use compact `r||s` format with low-S normalization
 - Ed25519 multicodec prefix: `[0xed, 0x01]` (varint)
@@ -117,8 +117,8 @@ This package produces markers that verify correctly with the TypeScript [`cellar
 
 | Package | Language | Description |
 |---------|----------|-------------|
-| [cellar-door-exit](https://github.com/CellarDoorExits/exit-door) | TypeScript | Core protocol (reference impl) |
-| **[cellar-door-exit](https://github.com/CellarDoorExits/exit-python)** | **Python** | **Core protocol ← you are here** |
+| [exit-door](https://github.com/CellarDoorExits/exit-door) | TypeScript | Core protocol (reference impl) |
+| **[exit-door](https://github.com/CellarDoorExits/exit-python)** | **Python** | **Core protocol ← you are here** |
 | [cellar-door-entry](https://github.com/CellarDoorExits/entry-door) | TypeScript | Arrival/entry markers |
 | [@cellar-door/langchain](https://github.com/CellarDoorExits/langchain) | TypeScript | LangChain integration |
 | [cellar-door-langchain](https://github.com/CellarDoorExits/cellar-door-langchain-python) | Python | LangChain integration |
@@ -133,4 +133,4 @@ This package produces markers that verify correctly with the TypeScript [`cellar
 
 ## License
 
-MIT
+Apache-2.0

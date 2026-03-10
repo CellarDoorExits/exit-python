@@ -1,4 +1,4 @@
-"""cellar-door-exit — Marker creation, canonicalization, and ID computation."""
+"""exit-door — Marker creation, canonicalization, and ID computation."""
 
 from __future__ import annotations
 

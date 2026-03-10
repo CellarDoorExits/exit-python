@@ -2,7 +2,7 @@
 
 import pytest
 
-from cellar_door_exit import (
+from exit_door import (
     ExitMarker,
     ExitStatus,
     ExitType,
@@ -16,7 +16,7 @@ from cellar_door_exit import (
     sign_marker,
     verify_counter_signature,
 )
-from cellar_door_exit.crypto import did_from_public_key
+from exit_door.crypto import did_from_public_key
 
 
 def _gen():

@@ -1,14 +1,14 @@
 """Tests for signing and verification."""
 
-from cellar_door_exit.crypto import (
+from exit_door.crypto import (
     did_from_p256_public_key,
     did_from_public_key,
     generate_key_pair,
     generate_p256_key_pair,
 )
-from cellar_door_exit.marker import create_marker
-from cellar_door_exit.models import DataIntegrityProof, ExitType
-from cellar_door_exit.proof import sign_marker, verify_marker
+from exit_door.marker import create_marker
+from exit_door.models import DataIntegrityProof, ExitType
+from exit_door.proof import sign_marker, verify_marker
 
 
 class TestSignVerify:
@@ -98,7 +98,7 @@ class TestSignVerify:
         kp = generate_p256_key_pair()
         did = did_from_p256_public_key(kp.public_key)
         # Sign multiple times and check all produce low-S
-        from cellar_door_exit.crypto import sign_p256
+        from exit_door.crypto import sign_p256
 
         for _ in range(20):
             sig = sign_p256(b"test data", kp.private_key)

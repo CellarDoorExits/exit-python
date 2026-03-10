@@ -1,4 +1,4 @@
-"""cellar-door-exit — Signing and verification."""
+"""exit-door — Signing and verification."""
 
 from __future__ import annotations
 

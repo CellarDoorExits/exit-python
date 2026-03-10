@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-from cellar_door_exit.errors import ValidationError
-from cellar_door_exit.marker import add_module, canonicalize, compute_id, create_marker
-from cellar_door_exit.models import ExitMarker, ExitStatus, ExitType, ModuleE
+from exit_door.errors import ValidationError
+from exit_door.marker import add_module, canonicalize, compute_id, create_marker
+from exit_door.models import ExitMarker, ExitStatus, ExitType, ModuleE
 
 
 class TestCreateMarker:
@@ -171,7 +171,7 @@ class TestAddModule:
         meta = ModuleE(reason="Test")
         updated = add_module(marker, "state_snapshot", None)  # type: ignore[arg-type]
         # Just test that snake_case key is accepted
-        from cellar_door_exit.models import ModuleB
+        from exit_door.models import ModuleB
         snap = ModuleB(state_hash="abc123")
         updated2 = add_module(marker, "state_snapshot", snap)
         assert updated2.state_snapshot is not None

@@ -1,4 +1,4 @@
-"""cellar-door-exit — Pydantic v2 models for EXIT Protocol markers.
+"""exit-door — Pydantic v2 models for EXIT Protocol markers.
 
 All models use frozen=True (immutable) and camelCase aliases for JSON wire format.
 """

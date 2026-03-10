@@ -1,4 +1,4 @@
-"""cellar-door-exit — Cryptographic operations.
+"""exit-door — Cryptographic operations.
 
 Ed25519 + P-256 key generation, signing, verification, and DID:key encoding.
 """

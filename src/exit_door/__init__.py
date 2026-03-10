@@ -1,9 +1,9 @@
-"""cellar-door-exit — EXIT Protocol SDK for Python.
+"""exit-door — EXIT Protocol SDK for Python.
 
 Create, sign, and verify ExitMarkers for AI agent departure records.
 
 Quick start:
-    >>> from cellar_door_exit import quick_exit, quick_verify
+    >>> from exit_door import quick_exit, quick_verify
     >>> result = quick_exit("https://platform.example.com")
     >>> print(result.marker.id)
     >>> verification = quick_verify(result.marker)

@@ -1,7 +1,7 @@
 """Tests for signer abstraction."""
 
-from cellar_door_exit.signer import Ed25519Signer, P256Signer, create_signer
-from cellar_door_exit.crypto import generate_key_pair, generate_p256_key_pair
+from exit_door.signer import Ed25519Signer, P256Signer, create_signer
+from exit_door.crypto import generate_key_pair, generate_p256_key_pair
 
 
 class TestCreateSigner:

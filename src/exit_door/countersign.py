@@ -1,4 +1,4 @@
-"""cellar-door-exit — Counter-signature and witness support."""
+"""exit-door — Counter-signature and witness support."""
 
 from __future__ import annotations
 

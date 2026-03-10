@@ -1,4 +1,4 @@
-"""cellar-door-exit — Error types."""
+"""exit-door — Error types."""
 
 
 class ExitError(Exception):

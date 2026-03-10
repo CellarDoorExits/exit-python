@@ -5,11 +5,11 @@ from pathlib import Path
 
 import pytest
 
-from cellar_door_exit import (
+from exit_door import (
     create_marker,
     ExitType,
 )
-from cellar_door_exit.marker import canonicalize, compute_id
+from exit_door.marker import canonicalize, compute_id
 
 
 VECTORS_PATH = Path(__file__).parent / "test-vectors.json"

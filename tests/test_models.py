@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from cellar_door_exit.models import (
+from exit_door.models import (
     DataIntegrityProof,
     ExitMarker,
     ExitStatus,
